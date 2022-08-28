@@ -6,6 +6,88 @@
     </head>
     <body>
         <script src="script.js"></script>
-        <h1>Welcome to Chlomoney's Protein Spot!</h1>
-    </body>
+        <div class="brand-logo"><img src="./brand-logo.png" alt="Company Logo"></div>
+<button class="tablink" onclick="openPage('Home', this, 'dimgray')">Home</button>
+<button class="tablink" onclick="openPage('About-Us', this, 'dimgray')" id="defaultOpen">About Us</button>
+<button class="tablink" onclick="openPage('Drinks', this, 'dimgray')">Drinks</button>
+<button class="tablink" onclick="openPage('Contact-Us', this, 'dimgray')">Contact Us</button>
+
+<div id="Home" class="tabcontent">
+</div>
+
+<div id="About-Us" class="tabcontent">
+  <p>"We strive to make customers happy by making fresh, delicious protein smoothies."</p>
+  <p>Chlomoney's Protein Spot was founded on May 2nd, 2019 and it's only location is in Atlanta. Chloe Scheffler grew up in a healthy lifestyle and discovered that she loved making smoothies. She spent her highschool and some college career working at Smoothie King and Tropical Smoothie. She also loved serving within the community and helping others. 
+    This didn't stop her from owning her own business. 
+    After 2 years in college, she decided to open her own protein business based in Atlanta. 
+    Ever since then, her business has been growing and growing. There's nothing that feels good more than making people feel better and happier than before.    </p>
+</div>
+
+<div id="Drinks" class="tabcontent">
+    <div class="grid">
+    <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="./tripleberry.jpg" alt="Triple Berry Smoothie" style="width:300px;height:300px;">
+            <img src="./pbbanana.jpg" alt="Peanut Butter Banana Smoothie" style="width:300px;height:300px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>Triple Berry</h1>
+            <p>Ingredients: mixed berries (strawberries, raspberries, blueberries, and blackberries), chia seeds, almond butter, vanilla protein powder, lemon juice, almond milk.</p>
+            <p>Calories: 191 cal</p>
+            <p>Protein: 13g</p>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+
+<div id="Contact-Us" class="tabcontent">
+  <p>Email: chlomoneyproteinspot@gmail.com</p>
+  <p><br>Address: 1234 Peachtree Street NE, Atlanta GA 30308 </br></p>
+  <p><br>Phone Number: 123-456-7890</br></p>
+</div>
+
+
+    <script>
+    function openPage(pageName,elmnt,color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+    
+    document.getElementById("defaultOpen").click();
+    </script>
+
+<form action="action_page.php" style="border:1px solid #ccc">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account and get reminders about our weekly promotions!</p>
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+  
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+  
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+
+</body>
 </html>
